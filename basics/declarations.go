@@ -1,29 +1,7 @@
-# Go 语言笔记
-
-## 你好，World！
-```go
 package main
 
 import "fmt"
 
-func main() {
-	fmt.Println("你好，world！")
-}
-```
-
-## 基础语法
-
-### 变量与声明变量
-#### 声明
-使用`var`定义变量
-* 定义了变量后就有初值
-* 定义后必须使用
-```go
-var 变量名 变量类型
-```
-
-示例：
-```go
 func zeroValue() {
 	// a = 0, s = ""
 	var a, b int
@@ -55,4 +33,13 @@ func shortcut() {
 	a, b, bool_, s := 1, 2, true, "hello"
 	fmt.Println(a, b, bool_,s)
 }
-```
+
+func main() {
+	zeroValue()
+	fmt.Println("\ninitial values: ")
+	initialValue()
+	fmt.Println("\nauto: ")
+	auto()
+	fmt.Println("\nshortcut:")
+	shortcut()
+}
