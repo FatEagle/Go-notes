@@ -56,3 +56,33 @@ func shortcut() {
     fmt.Println(a, b, bool_,s)
 }
 ```
+
+#### 内建变量类型
+* 整型
+    * (u)int：根据操作系统自动定义
+    * (u)int8, (u)int32, (u)int64：8位、32位、64位
+    * uintptr：指针
+* 浮点型
+    * float32， float64
+    * complex64， complex128
+* bool
+* 字符类型
+    * string：字符串类型
+    * byte
+    * rune: 字符型（与C的char很像，但是4字节）
+
+#### 强制类型转换
+Go语言只有强制类型转换，没有隐式类型转换。float32和float64也是不同的类型。
+```go
+func cast (a float64) int{
+    return int(a)
+}
+
+func main() {
+    var a float32 = 2.99
+    b := cast(float64(a))
+    fmt.Println(b)  // 2
+}
+```
+
+
