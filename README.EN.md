@@ -13,4 +13,8 @@ func main() {
 
 ## The Basics
 
-## Variables and Declarations
+### Variables and Declarations
+
+### Control Flow Tools
+
+## Input and Output
