@@ -85,6 +85,64 @@ func main() {
 }
 ```
 
+#### 常量
+常量不规定类型时，其类型在运算时才确定，所以可以作为各种类型来使用（类似C语言的#define）
+```go
+func const_() {
+    const a, b = 1, 2
+    const c, d float64 = 1.0, 2.0
+    fmt.Println(a + b)      // 3
+    fmt.Println(c + d)      // 3
+    fmt.Println(a + 3.14)   // 4.14
+}
+```
+
+我们可以使用const来定义一个枚举类型
+```go
+func enum() {
+    const (
+        red   = 0
+        blue  = 1
+        green = 2
+        white = 3
+    )
+
+    fmt.Println(red, blue, green, white)
+}
+```
+
+使用`iota`关键字可以自增值
+```go
+func enum_auto() {
+    // auto add 1
+    const (
+        red   = iota
+        blue
+        green
+        white
+    )
+
+    fmt.Println(red, blue, green, white)
+}
+```
+
+`iota`关键字可以参与运算
+```go
+func enmu_unit() {
+    // we can calculate with iota
+    const (
+        b = 1 << (10 * iota)
+        kb
+        mb
+        gb
+    )
+    
+    // 1 1024 1048576 1073741824
+    fmt.Println(b, kb, mb, gb)
+}
+```
+
+
 ### 流程控制
 
 
