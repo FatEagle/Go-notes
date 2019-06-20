@@ -18,3 +18,6 @@ func main() {
 ### Control Flow Tools
 
 ## Input and Output
+
+## License
+[Apache License 2.0](./LICENSE)
