@@ -12,6 +12,64 @@ func main() {
 ```
 
 ## 函数
+函数定义语法
+```go
+func 函数名(变量1, 变量2 变量类型1, 变量3 变量类型2, 变量4 变量类型4) 函数返回值类型1 {
+    // 一些操作
+}
+
+func 函数名(变量1, 变量2 变量类型1, 变量3 变量类型2) (函数返回值类型1, 函数返回值类型2) {
+    // 一些操作
+}
+
+func 函数名(变量1, 变量2 变量类型1) (别名1 函数返回值类型1, 别名2 函数返回值类型2) {
+    // 一些操作
+}
+```
+
+示例代码
+```go
+func my_print(s string) {
+    fmt.Println(s)
+}
+
+func add_suffix(s string) string {
+    s = s + " suffix"
+    return s
+}
+
+func calculate(a, b int, operation string) int {
+    switch operation {
+    case "+":
+        return a + b
+    case "-":
+        return a - b
+    case "*":
+        return a * b
+    case "/":
+        q, _ := div(a, b)
+        return q
+    default:
+        panic("unsupported operation: " + operation)
+    }
+}
+
+func div(a, b int) (q, r int) {
+    return a / b, a % b
+}
+
+func div2(a, b int) (q, r int) {
+    q = a / b
+    r = a % b
+    return
+}
+
+func div3(a, b int) (int, int) {
+    q := a / b
+    r := a % b
+    return q, r
+}
+```
 
 ## 基础语法
 
