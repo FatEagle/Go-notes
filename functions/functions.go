@@ -62,6 +62,14 @@ func apply(op func(int, int) int, a, b int) int {
     return op(a, b)
 }
 
+func sum(numbers ...int) int {
+    var result int = 0
+    for i := range numbers {
+        result += numbers[i]
+    }
+    return result
+}
+
 
 func main() {
     my_print("hello world")
@@ -85,4 +93,5 @@ func main() {
         return b - a
     }, 3, 2)
     fmt.Println(result)
+    fmt.Println(sum(1, 2, 3))
 }

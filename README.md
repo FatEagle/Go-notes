@@ -97,6 +97,19 @@ result := apply(func(a int, b int) int {
 fmt.Println(result)
 ```
 
+**可变参数列表**，传入...代表可以有任意个数的参数
+```go
+func sum(numbers ...int) int {
+    var result int = 0
+    for i := range numbers {
+        result += numbers[i]
+    }
+    return result
+}
+
+fmt.Println(sum(1, 2, 3))   // 6
+```
+
 ## 基础语法
 
 ### 变量与声明变量
