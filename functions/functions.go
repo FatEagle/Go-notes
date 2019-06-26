@@ -2,14 +2,17 @@ package main
 
 import "fmt"
 
+
 func my_print(s string) {
     fmt.Println(s)
 }
+
 
 func add_suffix(s string) string {
     s = s + " suffix"
     return s
 }
+
 
 func calculate(a, b int, operation string) int {
     switch operation {
@@ -27,9 +30,11 @@ func calculate(a, b int, operation string) int {
     }
 }
 
+
 func div(a, b int) (q, r int) {
     return a / b, a % b
 }
+
 
 func div2(a, b int) (q, r int) {
     q = a / b
@@ -37,11 +42,26 @@ func div2(a, b int) (q, r int) {
     return
 }
 
+
 func div3(a, b int) (int, int) {
     q := a / b
     r := a % b
     return q, r
 }
+
+
+func add(a int, b int) int {
+    return a + b
+}
+
+
+// function can be a parameter
+// e.g. result = apply(add, 1, 2)
+// result equals 3
+func apply(op func(int, int) int, a, b int) int {
+    return op(a, b)
+}
+
 
 func main() {
     my_print("hello world")
@@ -58,4 +78,11 @@ func main() {
 
     q, r = div3(11, 5)
     fmt.Println(q, r)
+
+    fmt.Println(apply(add, 1, 2))
+
+    result := apply(func(a int, b int) int {
+        return b - a
+    }, 3, 2)
+    fmt.Println(result)
 }
